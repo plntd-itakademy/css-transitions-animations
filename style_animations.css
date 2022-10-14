@@ -1,0 +1,112 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.container > div {
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.17);
+  border-radius: 14px;
+  padding: 30px;
+  background-color: white;
+}
+.container > div:not(:last-child) {
+  margin-bottom: 80px;
+}
+.container .box {
+  margin: auto;
+  border-radius: 14px;
+  box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.container .container-exo1 .box {
+  width: 300px;
+  height: 300px;
+  -webkit-animation: 3s ease-in infinite alternate changeColor;
+          animation: 3s ease-in infinite alternate changeColor;
+}
+@-webkit-keyframes changeColor {
+  from {
+    background-color: cyan;
+  }
+  30% {
+    background-color: greenyellow;
+  }
+  50% {
+    background-color: orange;
+  }
+  to {
+    background-color: green;
+  }
+}
+@keyframes changeColor {
+  from {
+    background-color: cyan;
+  }
+  30% {
+    background-color: greenyellow;
+  }
+  50% {
+    background-color: orange;
+  }
+  to {
+    background-color: green;
+  }
+}
+.container .container-exo2 .box {
+  background-color: #799ebc;
+  width: 600px;
+  padding: 30px;
+}
+.container .container-exo2 .box .sun {
+  border-radius: 50%;
+  background-color: #ffd93f;
+  height: 100px;
+  width: 100px;
+  -webkit-animation: 30s ease-out infinite alternate sunMoving;
+          animation: 30s ease-out infinite alternate sunMoving;
+}
+.container .container-exo2 .box .fa-cloud {
+  color: white;
+  font-size: 60px;
+  display: block;
+  -webkit-animation: 30s ease-out infinite alternate cloudMoving;
+          animation: 30s ease-out infinite alternate cloudMoving;
+}
+.container .container-exo2 .box .fa-cloud:nth-child(2) {
+  transform: translate(80px, -30px);
+}
+.container .container-exo2 .box .fa-cloud:nth-child(3) {
+  transform: translate(170px, -30px);
+}
+@-webkit-keyframes cloudMoving {
+  to {
+    transform: translate(20px, -30px);
+  }
+}
+@keyframes cloudMoving {
+  to {
+    transform: translate(20px, -30px);
+  }
+}
+@-webkit-keyframes sunMoving {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50px, 0);
+  }
+}
+@keyframes sunMoving {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50px, 0);
+  }
+}
+.container .container-exo3 .box {
+  background-color: #9c59b7;
+  width: 600px;
+  padding: 60px 30px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}/*# sourceMappingURL=style_animations.css.map */

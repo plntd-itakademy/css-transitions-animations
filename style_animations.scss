@@ -1,0 +1,99 @@
+$borderRadius: 14px;
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+
+  > div {
+    box-shadow: 0 0 5px 0px rgb(0 0 0 / 17%);
+    border-radius: 14px;
+    padding: 30px;
+    background-color: white;
+
+    &:not(:last-child) {
+      margin-bottom: 80px;
+    }
+  }
+
+  .box {
+    margin: auto;
+    border-radius: $borderRadius;
+    box-shadow: 4px 5px 10px 0px rgb(0 0 0 / 30%);
+  }
+
+  .container-exo1 .box {
+    width: 300px;
+    height: 300px;
+    animation: 3s ease-in infinite alternate changeColor;
+
+    @keyframes changeColor {
+      from {
+        background-color: cyan;
+      }
+      30% {
+        background-color: greenyellow;
+      }
+      50% {
+        background-color: orange;
+      }
+      to {
+        background-color: green;
+      }
+    }
+  }
+
+  .container-exo2 .box {
+    background-color: #799ebc;
+    width: 600px;
+    padding: 30px;
+
+    .sun {
+      border-radius: 50%;
+      background-color: #ffd93f;
+      height: 100px;
+      width: 100px;
+      animation: 30s ease-out infinite alternate sunMoving;
+    }
+
+    .fa-cloud {
+      color: white;
+      font-size: 60px;
+      display: block;
+      animation: 30s ease-out infinite alternate cloudMoving;
+
+      &:nth-child(2) {
+        transform: translate(80px, -30px);
+      }
+      &:nth-child(3) {
+        transform: translate(170px, -30px);
+      }
+    }
+
+    @keyframes cloudMoving {
+      to {
+        transform: translate(20px, -30px);
+      }
+    }
+
+    @keyframes sunMoving {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(50px, 0);
+      }
+    }
+  }
+
+  .container-exo3 .box {
+    background-color: #9c59b7;
+    width: 600px;
+    padding: 60px 30px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+
+    strong {
+    }
+  }
+}

@@ -1,0 +1,190 @@
+$borderRadius: 14px;
+
+body > div:not(:last-child) {
+  margin-bottom: 200px;
+}
+
+.container-exo1 {
+  background-color: #b7925b;
+  width: 500px;
+  padding: 50px;
+  margin: auto;
+  border-radius: $borderRadius;
+
+  .white-box {
+    background-color: white;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    border-radius: $borderRadius;
+
+    &:hover {
+      box-shadow: 8px 9px 13px 4px #0000004d;
+      transform: scale(1.02);
+    }
+  }
+}
+
+.container-exo2 {
+  background-color: #1dbc9e;
+  width: 600px;
+  padding: 50px;
+  margin: auto;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  border-radius: $borderRadius;
+
+  input[type="radio"] {
+    appearance: none;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0c393151;
+    }
+
+    &:checked {
+      background-color: white;
+      color: black;
+    }
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}):after {
+        content: "#{$i}";
+      }
+    }
+
+    &:after {
+      content: "";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 25px;
+    }
+  }
+}
+
+.container-exo3 {
+  width: 400px;
+  margin: auto;
+  position: relative;
+  padding: 200px 0;
+
+  > input[type="checkbox"] {
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    margin: -200px 0;
+  }
+
+  > div {
+    background-color: #ee81ee;
+    width: 100%;
+    height: 45px;
+    transition: all 0.2s ease-in-out;
+    border-radius: 24px;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  > input[type="checkbox"]:checked {
+    ~ div:nth-child(3) {
+      background-color: transparent;
+    }
+
+    ~ div:nth-child(2) {
+      transform: rotate(135deg) translate(43px, -44px);
+    }
+
+    ~ div:nth-child(4) {
+      transform: rotate(-135deg) translate(20px, 50px);
+    }
+  }
+}
+
+.container-exo4 {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+
+  > div:first-child {
+    border-radius: $borderRadius 0 0 $borderRadius;
+  }
+
+  > div:last-child {
+    border-radius: 0 $borderRadius $borderRadius 0;
+  }
+
+  > div {
+    height: 100%;
+    flex-grow: 1;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      flex-grow: 3;
+    }
+  }
+
+  > div:nth-child(odd) {
+    background-color: #36485e;
+  }
+
+  > div:nth-child(even) {
+    background-color: #68bf23;
+  }
+}
+
+.container-exo5 {
+  $blue: #296e8c;
+  margin: 200px auto;
+  width: 500px;
+  color: white;
+  font-size: 20px;
+  line-height: 1.7;
+  padding: 30px;
+  background-color: #9c59b7;
+  border-radius: $borderRadius;
+  position: relative;
+
+  .tooltip {
+    opacity: 0;
+    position: absolute;
+    background-color: $blue;
+    border-radius: $borderRadius;
+    padding: 15px;
+    bottom: 175px;
+    left: 25px;
+    width: 90%;
+    transition: all 0.2s ease-in-out;
+    font-size: 16px;
+    box-shadow: 2px 4px 4px 0px rgb(0 0 0 / 30%);
+    pointer-events: none;
+  }
+
+  span.highlight {
+    background-color: $blue;
+    border-radius: $borderRadius;
+    padding: 5px 12px;
+    cursor: pointer;
+
+    &:hover ~ .tooltip {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+}
